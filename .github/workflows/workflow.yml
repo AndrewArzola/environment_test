@@ -61,3 +61,10 @@ jobs:
         with:
           name: brakeman-report.txt
           path: brakeman.txt
+      - uses: actions/checkout@v2
+      - uses: akhileshns/heroku-deploy@v3.0.0
+        with:
+          heroku_api_key: ${{secrets.HEROKU_API_KEY}}
+          heroku_app_name: "test-app"
+          heroku_email: "andrew.j.arzola@tamu.edu"
+          usedocker: true
